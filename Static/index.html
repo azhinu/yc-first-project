@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<!--
+	Astral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Emarcid</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Cicles -->
+
+				<ul class="circles">
+								<li>хуйня</li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+								<li></li>
+				</ul>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#" class="icon link-page"><span>Links</span></a>
+						<a href="#messages" class="icon messages-page"><span>Messages</span></a>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Links -->
+							<article id="home" class="panel intro">
+								<header>
+									<h1>Emarcid</h1>
+									<p>Make link shorter:</p>
+								</header>
+								<form action="javascript:text_short()">
+									<input id="url" name="url" type="text"><br>
+									<input type="submit" value="Short it!">
+								</form>
+							</article>
+
+						<!-- Messages -->
+						<article id="messages" class="panel intro">
+							<form action="javascript:text_share()">
+								<div class="messages">
+									<div>
+										<header>
+											<h1>Emarcid</h1>
+											<p>Share your mind:</p>
+											<p style="font-size: 0.7em; text-align: center;">Securely ^-^</p>
+										  <label for="messages-shorten">Short message link  </label><input type="checkbox" id="messagesShorten" value="shorten">
+										</header>
+									</div>
+									<div>
+										<textarea id="messageText" rows="1" onkeyup="$(this).height(5);$(this).height($(this).prop('scrollHeight'))"></textarea>
+										<input type="submit" value="Share it!">
+									</div>
+								</div>
+							</form>
+						</article>
+					</div>
+
+					<div class="popup">
+						<span class="popuptext" id="popuptext" onclick="copyToClipboard(this)"></span>
+						<span class="popuptext" id="copyPopup">Copied</span>
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>Base on: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>

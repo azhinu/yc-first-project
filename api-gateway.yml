@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  title: Emarcid service
+  version: 1.0.0
+servers:
+- url: https://xxx
+paths:
+  /:
+    get:
+      x-yc-apigateway-integration:
+        type: object_storage
+        bucket: emarcid
+        object: index.html
+        presigned_redirect: false
+      operationId: static
+  /assets/{file+}:
+    get:
+      x-yc-apigateway-integration:
+        type: object_storage
+        bucket: emarcid
+        object: assets/{file}
+        presigned_redirect: false
+        error_object: 404.html
+      parameters:
+      - explode: false
+        in: path
+        name: file
+        required: true
+        schema:
+          type: string
+        style: simple
+      summary: Serve static file from Yandex Cloud Object Storage
+  /shorten:
+    post:
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id:
+        service_account_id:
+      operationId: shorten
+  /r/{id}:
+    get:
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id:
+        service_account_id:
+      operationId: redirect
+      parameters:
+      - description: id of the url
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+  /messange:
+    post:
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id:
+        service_account_id:
+      operationId: sendmessange
+  /messange/{id}:
+    get:
+      x-yc-apigateway-integration:
+        type: cloud_functions
+        function_id:
+        service_account_id:
+      operationId: getmessage
+      parameters:
+      - description: Message ID
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
